@@ -1,7 +1,33 @@
-import { Box, Heading, FormControl, FormLabel, Input, NumberInput, NumberInputField, Textarea, VStack, Link, Flex, Text } from "@chakra-ui/react";
+import { Box, Heading, FormControl, FormLabel, Input, Textarea, VStack, Link, Flex, Text } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { StarIcon } from "@chakra-ui/icons";
+
+const StarRating = ({ max, onChange }) => {
+  const [rating, setRating] = useState(0);
+
+  const handleClick = (value) => {
+    setRating(value);
+    onChange(value);
+  };
+
+  return (
+    <Box display="flex" alignItems="center">
+      {Array(max)
+        .fill("")
+        .map((_, i) => (
+          <StarIcon
+            key={i}
+            boxSize={6}
+            color={i < rating ? "teal.500" : "gray.300"}
+            cursor="pointer"
+            onClick={() => handleClick(i + 1)}
+          />
+        ))}
+    </Box>
+  );
+};
 
 const Candidate = () => {
   const { id } = useParams();
@@ -41,9 +67,7 @@ const Candidate = () => {
                   </FormControl>
                   <FormControl mb={2}>
                     <FormLabel>Grade (1-10)</FormLabel>
-                    <NumberInput max={10} min={1}>
-                      <NumberInputField />
-                    </NumberInput>
+                    <StarRating max={10} onChange={(value) => console.log("Manager 1 Grade:", value)} />
                   </FormControl>
                   <FormControl mb={2}>
                     <FormLabel>Comments</FormLabel>
@@ -58,9 +82,7 @@ const Candidate = () => {
                   </FormControl>
                   <FormControl mb={2}>
                     <FormLabel>Grade (1-10)</FormLabel>
-                    <NumberInput max={10} min={1}>
-                      <NumberInputField />
-                    </NumberInput>
+                    <StarRating max={10} onChange={(value) => console.log("Manager 2 Grade:", value)} />
                   </FormControl>
                   <FormControl mb={2}>
                     <FormLabel>Comments</FormLabel>
@@ -72,9 +94,7 @@ const Candidate = () => {
                 <Heading size="md" mb={2}>Adaptability</Heading>
                 <FormControl mb={2}>
                   <FormLabel>Grade (1-5)</FormLabel>
-                  <NumberInput max={5} min={1}>
-                    <NumberInputField />
-                  </NumberInput>
+                  <StarRating max={5} onChange={(value) => console.log("Adaptability Grade:", value)} />
                 </FormControl>
                 <FormControl mb={2}>
                   <FormLabel>Comments</FormLabel>
@@ -87,9 +107,7 @@ const Candidate = () => {
                   <Heading size="sm" mb={2}>Team First</Heading>
                   <FormControl mb={2}>
                     <FormLabel>Grade (1-5)</FormLabel>
-                    <NumberInput max={5} min={1}>
-                      <NumberInputField />
-                    </NumberInput>
+                    <StarRating max={5} onChange={(value) => console.log("Team First Grade:", value)} />
                   </FormControl>
                   <FormControl mb={2}>
                     <FormLabel>Comments</FormLabel>
@@ -100,9 +118,7 @@ const Candidate = () => {
                   <Heading size="sm" mb={2}>Urgency</Heading>
                   <FormControl mb={2}>
                     <FormLabel>Grade (1-5)</FormLabel>
-                    <NumberInput max={5} min={1}>
-                      <NumberInputField />
-                    </NumberInput>
+                    <StarRating max={5} onChange={(value) => console.log("Urgency Grade:", value)} />
                   </FormControl>
                   <FormControl mb={2}>
                     <FormLabel>Comments</FormLabel>
@@ -113,9 +129,7 @@ const Candidate = () => {
                   <Heading size="sm" mb={2}>High Agency</Heading>
                   <FormControl mb={2}>
                     <FormLabel>Grade (1-5)</FormLabel>
-                    <NumberInput max={5} min={1}>
-                      <NumberInputField />
-                    </NumberInput>
+                    <StarRating max={5} onChange={(value) => console.log("High Agency Grade:", value)} />
                   </FormControl>
                   <FormControl mb={2}>
                     <FormLabel>Comments</FormLabel>
