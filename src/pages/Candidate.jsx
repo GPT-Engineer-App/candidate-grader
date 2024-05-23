@@ -1,4 +1,4 @@
-import { Box, Heading, FormControl, FormLabel, Input, NumberInput, NumberInputField, Textarea, VStack } from "@chakra-ui/react";
+import { Box, Heading, FormControl, FormLabel, Input, NumberInput, NumberInputField, Textarea, VStack, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 const Candidate = () => {
@@ -42,6 +42,64 @@ const Candidate = () => {
             <FormLabel>Comments</FormLabel>
             <Textarea placeholder="Enter comments" />
           </FormControl>
+        </Box>
+        <Box>
+          <Heading size="md" mb={2}>Adaptability</Heading>
+          <FormControl mb={2}>
+            <FormLabel>Grade (1-5)</FormLabel>
+            <NumberInput max={5} min={1}>
+              <NumberInputField />
+            </NumberInput>
+          </FormControl>
+          <FormControl mb={2}>
+            <FormLabel>Comments</FormLabel>
+            <Textarea placeholder="Enter comments" />
+          </FormControl>
+        </Box>
+        <Box>
+          <Heading size="md" mb={2}>Ways of Working</Heading>
+          <Box mb={4}>
+            <Heading size="sm" mb={2}>Team First</Heading>
+            <FormControl mb={2}>
+              <FormLabel>Grade (1-5)</FormLabel>
+              <NumberInput max={5} min={1}>
+                <NumberInputField />
+              </NumberInput>
+            </FormControl>
+            <FormControl mb={2}>
+              <FormLabel>Comments</FormLabel>
+              <Textarea placeholder="Enter comments" />
+            </FormControl>
+          </Box>
+          <Box mb={4}>
+            <Heading size="sm" mb={2}>Urgency</Heading>
+            <FormControl mb={2}>
+              <FormLabel>Grade (1-5)</FormLabel>
+              <NumberInput max={5} min={1}>
+                <NumberInputField />
+              </NumberInput>
+            </FormControl>
+            <FormControl mb={2}>
+              <FormLabel>Comments</FormLabel>
+              <Textarea placeholder="Enter comments" />
+            </FormControl>
+          </Box>
+          <Box mb={4}>
+            <Heading size="sm" mb={2}>High Agency</Heading>
+            <FormControl mb={2}>
+              <FormLabel>Grade (1-5)</FormLabel>
+              <NumberInput max={5} min={1}>
+                <NumberInputField />
+              </NumberInput>
+            </FormControl>
+            <FormControl mb={2}>
+              <FormLabel>Comments</FormLabel>
+              <Textarea placeholder="Enter comments" />
+            </FormControl>
+            <Text mt={2} fontSize="sm" color="gray.500">
+              Breaks down our mission into what needs to be done and makes sure it gets done.
+            </Text>
+          </Box>
         </Box>
       </VStack>
     </Box>
