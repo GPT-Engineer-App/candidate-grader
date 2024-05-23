@@ -18,38 +18,41 @@ const Candidate = () => {
         <Heading mb={4}>{candidate.name}</Heading>
         <VStack spacing={4} align="stretch">
           <Box>
-            <Heading size="md" mb={2}>Manager 1</Heading>
-            <FormControl mb={2}>
-              <FormLabel>Manager Name</FormLabel>
-              <Input placeholder="Enter manager's name" />
-            </FormControl>
-            <FormControl mb={2}>
-              <FormLabel>Grade (1-10)</FormLabel>
-              <NumberInput max={10} min={1}>
-                <NumberInputField />
-              </NumberInput>
-            </FormControl>
-            <FormControl mb={2}>
-              <FormLabel>Comments</FormLabel>
-              <Textarea placeholder="Enter comments" />
-            </FormControl>
-          </Box>
-          <Box>
-            <Heading size="md" mb={2}>Manager 2</Heading>
-            <FormControl mb={2}>
-              <FormLabel>Manager Name</FormLabel>
-              <Input placeholder="Enter manager's name" />
-            </FormControl>
-            <FormControl mb={2}>
-              <FormLabel>Grade (1-10)</FormLabel>
-              <NumberInput max={10} min={1}>
-                <NumberInputField />
-              </NumberInput>
-            </FormControl>
-            <FormControl mb={2}>
-              <FormLabel>Comments</FormLabel>
-              <Textarea placeholder="Enter comments" />
-            </FormControl>
+            <Heading size="md" mb={4}>Manager Feedback</Heading>
+            <Box mb={4}>
+              <Heading size="sm" mb={2}>Manager 1</Heading>
+              <FormControl mb={2}>
+                <FormLabel>Manager Name</FormLabel>
+                <Input placeholder="Enter manager's name" />
+              </FormControl>
+              <FormControl mb={2}>
+                <FormLabel>Grade (1-10)</FormLabel>
+                <NumberInput max={10} min={1}>
+                  <NumberInputField />
+                </NumberInput>
+              </FormControl>
+              <FormControl mb={2}>
+                <FormLabel>Comments</FormLabel>
+                <Textarea placeholder="Enter comments" />
+              </FormControl>
+            </Box>
+            <Box mb={4}>
+              <Heading size="sm" mb={2}>Manager 2</Heading>
+              <FormControl mb={2}>
+                <FormLabel>Manager Name</FormLabel>
+                <Input placeholder="Enter manager's name" />
+              </FormControl>
+              <FormControl mb={2}>
+                <FormLabel>Grade (1-10)</FormLabel>
+                <NumberInput max={10} min={1}>
+                  <NumberInputField />
+                </NumberInput>
+              </FormControl>
+              <FormControl mb={2}>
+                <FormLabel>Comments</FormLabel>
+                <Textarea placeholder="Enter comments" />
+              </FormControl>
+            </Box>
           </Box>
           <Box>
             <Heading size="md" mb={2}>Adaptability</Heading>
